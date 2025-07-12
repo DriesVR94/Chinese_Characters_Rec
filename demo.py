@@ -9,19 +9,24 @@ import lib.config.alphabets as alphabets
 import yaml
 from easydict import EasyDict as edict
 import argparse
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
+
  
 def parse_arg():
     parser = argparse.ArgumentParser(description="demo")
 
     parser.add_argument('--cfg', help='experiment configuration filename', type=str, default='lib/config/360CC_config.yaml')
-    parser.add_argument('--image_path', type=str, default='images/test.png', help='the path to your image')
+    parser.add_argument('--image_path', type=str, default='C:/Users/Dries Van Ranst/OneDrive/Bureaublad/shangxue.png', help='the path to your image')
     parser.add_argument('--checkpoint', type=str, default='output/checkpoints/mixed_second_finetune_acc_97P7.pth',
                         help='the path to your checkpoints')
 
     args = parser.parse_args()
 
-    with open(args.cfg, 'r') as f:
-        config = yaml.load(f)
+    #with open(args.cfg, 'r') as f:
+     #   config = yaml.load(f)
+    with open('C:/Users/Dries Van Ranst/OneDrive/Bureaublad/VS_Code/HSK_Project/Chinese_Characters_Rec/lib/config/OWN_config.yaml', 'r') as f:
+        config = yaml.load(f, Loader=yaml.FullLoader)
         config = edict(config)
 
     config.DATASET.ALPHABETS = alphabets.alphabet

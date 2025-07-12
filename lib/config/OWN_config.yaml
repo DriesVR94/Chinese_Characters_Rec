@@ -12,7 +12,7 @@ CUDNN:
 
 DATASET:
   DATASET: OWN
-  ROOT: "H:/DL-DATASET/360M/images"
+  ROOT: "C:/Users/Dries Van Ranst/OneDrive/Bureaublad/shangxue.png"
   JSON_FILE: {'train': 'lib/dataset/txt/train_own.txt', 'val': 'lib/dataset/txt/test_own.txt'}
   SCALE_FACTOR: 0.25
   ROT_FACTOR: 30
